@@ -1,8 +1,18 @@
 <html>
-  <head></head>
-  <body>
-    <p>
-      The SECRET NUMBER is <%= number %>
-    </p>
-  </body>
+<head></head>
+<body>
+	<p>
+		Try to guess a number in range from 0 to 100<br>
+		<% if message == "correct!" %>
+			The SECRET NUMBER is <%= number %>
+		<% end %>
+	</p>
+	<form>
+		<input type='text' name='guess' />
+		<input type='submit' value='Guess!' />
+	</form>
+	<p>
+		Your guess was <%= message %>
+	</p>
+</body>
 </html>
