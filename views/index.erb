@@ -1,18 +1,43 @@
 <html>
-<head></head>
+<head>
+	<style>
+		body { background: 
+			<% case message %>
+		<% when "correct!" %>
+		<%="green;" %>
+		<% when "way too high!" %>
+		<%="red;" %>
+		<% when "way too low!" %>
+		<%="red;" %>
+		<% when "too low!" %>
+		<%="yellow;" %>
+		<% when "too high!" %>
+		<%= "yellow;" %>
+		<% else %>
+		<%= "white;" %>
+		<% end %>
+			}
+  </style>
+</head>
 <body>
 	<p>
 		Try to guess a number in range from 0 to 100<br>
-		<% if message == "correct!" %>
-			The SECRET NUMBER is <%= number %>
+		<% if reset %>
+			The SECRET NUMBER was <%= number %>
 		<% end %>
 	</p>
 	<form>
 		<input type='text' name='guess' />
 		<input type='submit' value='Guess!' />
 	</form>
+<!-- 	<button type="submit" form ="form1" value="Submit">Start again</button> -->
 	<p>
 		Your guess was <%= message %>
+	</p>
+	<p>
+		<% if reset %>
+		You have used up all your attempts. A new number has been generated.
+		<% end %>
 	</p>
 </body>
 </html>
