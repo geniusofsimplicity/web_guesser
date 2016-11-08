@@ -1,5 +1,8 @@
 require "sinatra"
+require "sinatra/reloader"
+
+set :number, rand(101)
 
 get "/" do
-	"Good morning, World!"
-end
+	"The secret number is #{options.number}"
+end 
